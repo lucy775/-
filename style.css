@@ -1,0 +1,74 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+section {
+  margin: 0 auto;
+  max-width: 500px;
+  min-width: 320px;
+  min-height: 160px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.board,
+button {
+  width: 150px;
+  height: 90px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.board {
+  border: 3px solid green;
+  font-size: 18px;
+}
+
+button {
+  background-color: green;
+  color: white;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+button:focus {
+  outline: none;
+}
+
+.playground {
+  display: grid;
+  width: 500px;
+  height: 500px;
+  grid-template-columns: repeat(10, 1fr);
+  grid-template-rows: repeat(10, 1fr);
+  gap: 2px;
+}
+
+.playground > div {
+  background: url(assets/init.png) center/contain no-repeat;
+  cursor: pointer;
+  border: 1px solid transparent;
+}
+
+.playground > div:hover {
+  border-color: black;
+}
+
+.playground > div.checked {
+  background-image: url(assets/null.png);
+}
+
+.playground > div.checked.plane {
+  background-image: url(assets/bingo.png);
+}
+
+@media only screen and (max-device-width: 500px) {
+  .playground {
+    width: 300px;
+    height: 300px;
+  }
+}
